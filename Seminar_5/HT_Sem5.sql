@@ -23,7 +23,7 @@ GROUP BY users.id
 /*Выберите все сообщения, отсортируйте сообщения по возрастанию даты отправления (created_at) 
 и найдите разницу дат отправления между соседними сообщениями, получившегося списка. (используйте LEAD или LAG)*/
 
-SELECT body AS message, created_at AS '',
+SELECT body AS message, created_at AS 'date of create',
 timestampdiff(minute, lag(created_at) OVER(ORDER BY created_at), created_at) AS 'difference time, minutes' 
 FROM messages
 ORDER BY created_at
