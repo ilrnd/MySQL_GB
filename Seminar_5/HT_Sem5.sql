@@ -3,11 +3,11 @@ CREATE OR REPLACE VIEW view_messages
 AS 
 (SELECT firstname, lastname, gender, hometown
 FROM users
-JOIN PrOFiLES ON uSERS.id = profiles.USer_ID 
-WHERE TIMESTAMPDIFF(YEAR, birtHday, CURDATE()) <= 20);
+JOIN profiles ON uSers.id = profiles.user_id 
+WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) <= 20);
 
 SELECT *
-FROM view_mesSages;
+FROM view_messages;
 
 /*2. НайдитЕ КОЛ-ВО, ОТПРАВЛЕННЫХ СОобщений КаЖДЫМ ПОЛЬЗоВАтЕЛЕм и ВЫВЕДиТе РАНжированный список пользователей, 
 указав имя и фамилию пользователя, количество отправленных сообщений и место в рейтинге 
