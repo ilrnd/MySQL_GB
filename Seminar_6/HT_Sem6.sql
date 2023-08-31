@@ -55,12 +55,12 @@ SELECT curtime() AS now, hello() AS hello;
 /*(по желанию) Создайте таблицу logs типа Arhive. Пусть при каждом создании записи в таблице users, communities и message в таблицу logs помещается время
 и дата создания записи, название таблицы, идентификатор первичного ключа*/
 DROP TABLE IF EXISTS logs_table;
-CREATE TABLE logs_table (
-	id SERIAL PRIMARY KEY, -- SERIAL = BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
+CREATE TABLE logs_table  (
     date_change DATETIME,
     table_update VARCHAR(50),
     id_prim_key INT
-);
+)
+ENGINE= ARCHIVE;
 
 DROP TRIGGER IF EXISTS archive_user;
 DELIMITER //
